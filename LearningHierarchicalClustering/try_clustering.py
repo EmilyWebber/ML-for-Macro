@@ -8,8 +8,6 @@ from scipy.spatial.distance import pdist
 from scipy.cluster.hierarchy import inconsistent
 from scipy.cluster.hierarchy import fcluster
 
-
-
 def step_one():
 	np.random.seed(4711)
 	a = np.random.multivariate_normal([10, 0], [[3, 1], [1, 4]], size=[100,])
@@ -99,7 +97,7 @@ def step_three(X):
 	d = np.random.multivariate_normal([80, 80], [[30, 1], [1, 30]], size=[200, ])
 	e = np.random.multivariate_normal([0, 100], [[100, 1], [1, 100]], size=[200, ])
 	X2 = np.concatenate((X, c, d, e))
-	plt.scatter(X2[:,0], X2[:,1])
+	# plt.scatter(X2[:,0], X2[:,1])
 	# plt.show()
 	return X2
 
@@ -107,7 +105,7 @@ def step_four(X2):
 	Z2 = linkage(X2, "ward")
 	plt.figure(figsize=(10, 10))
 	fancy_dendrogram(Z2, truncate_mode="lastp", p=30, leaf_rotation=90., leaf_font_size=12., show_contracted=True, annotate_above=40, max_d=170)
-	# plt.show()
+	plt.show()
 	return Z2
 
 def elbow(Z2):
@@ -138,10 +136,10 @@ if __name__ == "__main__":
 
 	Z = step_two(X)
 
-	# X2 = step_three(X)
+	X2 = step_three(X)
 
-	# Z2 = step_four(X2)
+	Z2 = step_four(X2)
 
 	# elbow(Z2)
 
-	final_step(X, Z)
+	# final_step(X, Z)
