@@ -38,7 +38,6 @@ def plot_dendrogram(X1):
 	plt.show()
 
 
-
 if __name__ == "__main__":
 
 	path = "/Users/Emily/Desktop/Harris/Macroeconomics/Data/usa_00006.csv"
